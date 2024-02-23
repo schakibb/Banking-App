@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chakib.css">
+</head>
+
+<body>
+    <header>
+        <!-- Welcome message for users -->
+        <p class="welcome-msg">Login To Get Started </p>
+
+        <!-- Bank logo and name -->
+        <p class="bank-logo-name"><img src="bank-building.png" height="20" width="20"> Liberty Bank </p>
+
+        <!-- Button for logging in or out -->
+        <button class="Btn-log-in-out">
+            <div class="sign"><svg viewBox="0 0 512 512">
+                    <path
+                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                    </path>
+                </svg></div>
+
+            <div class="label-log-in-out">Login</div>
+        </button>
+
+    </header>
+
+    <main class="main-app hidden">
+
+        <div class="balance">
+            <p class="current-balance-label">Current balance</p>
+            <p class="balance-value">0000$</p>
+        </div>
+
+        <article>
+            <div class="movements">
+                <div class="movements__row">
+                    <div class="movements__type movements-type-deposit">
+                        2 deposit
+                    </div>
+                    <div class="movements__value">4 000$</div>
+                </div>
+                <div class="movements__row">
+                    <div class="movements__type movements-type-withdrawal">
+                        1 withdrawal
+                    </div>
+                    <div class="movements__value">-378$</div>
+                </div>
+            </div>
+            <div class="operations">
+                <!-- OPERATION: TRANSFERS -->
+                <div class="operation operation-transfer">
+                    <h2>Transfer money</h2>
+
+                    <form class="operation-form form--transfer">
+                        <input placeholder="Amount" type="number" name="number" class="input transfer-amount-value">
+                        <input placeholder="To" type="text" name="text" class="input transfer-amount-to">
+                        <button class="form__operation-btn form__btn--transfer">&rarr;</button>
+                    </form>
+                </div>
+
+                <!-- OPERATION: LOAN -->
+                <div class="operation operation-loan">
+                    <h2>Request loan</h2>
+                    <form class="operation-form form--loan">
+                        <input placeholder="Amount" type="number" name="text" class="input loan-amount-value">
+                        <button class="form__operation-btn form__btn--loan">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+            
+        </article>
+        <div class="summary">
+            <p class="summary__label">In</p>
+            <p class="summary__value summary__value--in">0000$</p>
+            <p class="summary__label">Out</p>
+            <p class="summary__value summary__value--out">0000$</p>
+            <button class="sort"> Sort <span class="arrow-icon">&rarr;</span> </button>
+
+        </div>
+        <p class="logout-timer">
+            You will be logged out in <span class="timer">05:00</span>
+        </p>
+    </main>
+
+
+    
+    <form class="log-in-out-form hidden" action="">
+        <p class="heading">Login</p>
+        <div class="inputContainer">
+            <svg viewBox="0 0 16 16" fill="#2e2e2e" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
+                class="inputIcon">
+                <path
+                    d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z">
+                </path>
+            </svg>
+            <input placeholder="Username" id="username" class="inputField username" type="text">
+        </div>
+
+        <div class="inputContainer">
+            <svg viewBox="0 0 16 16" fill="#2e2e2e" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
+                class="inputIcon">
+                <path
+                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z">
+                </path>
+            </svg>
+            <input placeholder="Password" id="password" class="inputField password" type="password">
+        </div>
+
+
+        <button class="submit">submit</button>
+    </form>
+
+
+    <div id="logoutConfirmation" class="logout-confirmation-window hidden">
+        <p>Are you sure you want to log out?</p>
+        <button class="confirmLogout-yes">Yes</button>
+        <button class="confirmLogout-no">No</button>
+    </div>
+    
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

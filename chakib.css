@@ -1,0 +1,535 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #eee;
+  height: 100vh;
+}
+
+
+
+
+/*----------------------------------- Header --------------------------------*/
+
+header {
+  display: flex;
+  width: 85%;
+  margin: 30px auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 8px #bbb;
+
+}
+
+.welcome-msg,
+.bank-logo-name {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.welcome-msg {
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.bank-logo-name {
+  position: absolute;
+  left: 43%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+  text-shadow: 0px 0px 3px #C0C0C0;
+}
+
+/*-------------- logout button ---------------*/
+.Btn-log-in-out {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #03C03C;
+}
+
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+.label-log-in-out {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+.Btn-log-in-out:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn-log-in-out:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 10px;
+}
+
+.Btn-log-in-out:hover .label-log-in-out {
+  opacity: 100;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+.Btn-log-in-out:active {
+  transform: translate(2px, 2px);
+}
+
+
+
+/*---------------------------- MAIN APP ---------------------------*/
+
+
+.main-app {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 85%;
+}
+
+.balance {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -20px;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 20%, rgba(0, 33, 71, 0.9), rgba(0, 50, 98, 0.9) 82%, rgba(0, 127, 255, 0.9));    padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance p {
+  font-size: 35px;
+  color: #eee;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+/*------operation ------*/
+.operation {
+  width: 350px;
+}
+
+.operation-transfer,
+.operation-loan {
+  height: 120px;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.operation-transfer {
+  background: linear-gradient(90deg, rgba(3, 192, 60, 0.8), rgba(34, 139, 34, 0.8));}
+
+.operation-loan {
+  background-image: linear-gradient(to bottom, rgba(255, 8, 0, 0.8), rgba(222, 49, 99, 0.8));
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.operation-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.input {
+  width: 90px;
+  border: none;
+  font-size: 15px;
+  color: #555;
+  padding: 10px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.input:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0.5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.input::placeholder {
+  color: #999;
+  /* Placeholder text color */
+}
+
+.form__operation-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.form__operation-btn:hover {
+  transform: translate(1px, 0px);
+  color: #2e2e2e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.movements {
+  margin-top: 25px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adjusted box shadow */
+  border-radius: 20px 10px 10px 20px;
+  overflow: auto; /* Changed to auto to show scrollbar only when needed */
+  height: 325px;
+  width: 700px;
+  min-width: 100px;
+}
+
+.movements::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.movements::-webkit-scrollbar-thumb {
+  background-color: #999; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.movements::-webkit-scrollbar-thumb:hover {
+  background-color: #666; /* Color of the scrollbar thumb on hover */
+}
+
+.movements::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+.movements__row {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.movements__type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 0 2px black;
+  padding: 0.2rem 1.1rem;
+  border-radius: 10rem;
+  margin-right: 150px;
+}
+
+.movements-type-deposit {
+  /* background-image: linear-gradient(90deg, #03C03C, #228B22); */
+  background: linear-gradient(90deg, rgba(3, 192, 60, 0.8), rgba(34, 139, 34, 0.8));
+}
+
+.movements-type-withdrawal {
+  /* background-image: linear-gradient(to bottom, #FF0800, #DE3163); */
+  background-image: linear-gradient(to bottom, rgba(255, 8, 0, 0.8), rgba(222, 49, 99, 0.8));
+}
+
+.movements__value {
+  font-size: 1.7rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+article {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 50px;
+}
+
+
+/*------------------------------- FOOTER -------------------------------*/
+.summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.summary__label {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.summary__value {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.summary__value--in {
+  color: rgba(61, 168, 61, 0.8);
+  margin-right: 10px;
+}
+.summary__value--out {
+  color: #f5465d;
+}
+
+.sort {
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.sort:hover{
+  color: #2e2e2e;
+  transform: translate(0px,-1px);
+}
+.arrow-icon {
+  rotate: 90deg;
+  font-size: 30px;
+}
+
+.logout-timer {
+  font-size: 0.8rem;
+  text-align: right;
+  transform: translateY(-18px);
+}
+
+.timer {
+  font-weight: 700;
+}
+
+/*------------------------ LOG OUT AND IN FORM ----------------------------*/
+.log-in-out-form {
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.log-in-out-form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 20px 20px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.062);
+  height: 400px;
+}
+
+.heading {
+  font-size: 3.5em;
+  color: #2e2e2e;
+  font-weight: 700;
+  margin: 15px 0 30px 0;
+}
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 10px;
+}
+
+.inputField {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 173);
+  border-top: 0.005px solid rgb(173, 173, 173);
+  border-radius: 30px;
+  margin: 10px 0;
+  color: black;
+  font-size: .9em;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+
+.inputField:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(199, 114, 255);
+  border-top: 2px solid rgb(199, 114, 255);
+}
+
+.inputField::placeholder {
+  color: rgb(80, 80, 80);
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.submit {
+  position: relative;
+  width: 100%;
+  border: 2px solid #8000ff;
+  background-color: #8000ff;
+  height: 40px;
+  color: white;
+  font-size: .9em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.submit::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.253);
+  height: 100%;
+  width: 150px;
+  top: 0;
+  left: -200px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  filter: blur(10px);
+  transition-duration: .5s;
+}
+
+.submit:hover::after {
+  transform: translateX(600px);
+  transition-duration: .5s;
+}
+
+
+/*----------------- LOGOUT CONFIRMATION WINDOW -------------------*/
+
+.logout-confirmation-window {
+  position: absolute;
+  top: 40%;
+  left: 38%;
+  z-index: 10;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.logout-confirmation-window p {
+  margin-bottom: 20px;
+}
+
+.logout-confirmation-window button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-confirmation-window button:hover {
+  background-color: #0056b3;
+}
+
+
+/*--------------------------------- ADD SOME ANIMATION ----------------------------------------*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    display: 100;
+  }
+}
+
+.log-in-out-form,
+.main-app,
+.logout-confirmation-window {
+  animation: fadeIn 1s forwards;
+
+}
+
+/*----------------- FOR SHOWING AND HIDDING WINDOWS -----------------*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
